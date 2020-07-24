@@ -1,11 +1,7 @@
 # POKEDEX
-The Pokedex is an electronic device designed to catalogue and provide information regarding the various species of Pokémon
+Cerated Pokedex website designed to catalogue and provide information regarding the various species of Pokémon with React and Material-UI
 
-
-
-
-
-
+<br>
 
 # Getting Started Here
 
