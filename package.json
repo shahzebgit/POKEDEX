@@ -1,5 +1,5 @@
 {
-  "name": "my-cool-new-app",
+  "name": "PokeDex",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
