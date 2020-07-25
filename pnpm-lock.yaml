@@ -5,6 +5,7 @@ dependencies:
   '@testing-library/react': 9.5.0_react-dom@16.13.1+react@16.13.1
   '@testing-library/user-event': 7.2.1
   axios: 0.19.2
+  history: 5.0.0
   react: 16.13.1
   react-dom: 16.13.1_react@16.13.1
   react-router-dom: 5.2.0_react@16.13.1
@@ -5516,6 +5517,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-36nwAD620w12kuzPAsyINPWJqlNbij+hpK1k9XRloDtym8mxzGYl2c17LnV6IAGB2Dmg4tEa7G7DlawS0+qjew==
+  /history/5.0.0:
+    dependencies:
+      '@babel/runtime': 7.10.5
+    dev: false
+    resolution:
+      integrity: sha512-3NyRMKIiFSJmIPdq7FxkNMJkQ7ZEtVblOQ38VtKaA0zZMW1Eo6Q6W8oDKEflr1kNNTItSnk4JMCO1deeSgbLLg==
   /hmac-drbg/1.0.1:
     dependencies:
       hash.js: 1.1.7
@@ -11856,6 +11863,7 @@ specifiers:
   '@testing-library/react': ^9.5.0
   '@testing-library/user-event': ^7.2.1
   axios: ^0.19.2
+  history: ^5.0.0
   react: ^16.13.1
   react-dom: ^16.13.1
   react-router-dom: ^5.2.0
