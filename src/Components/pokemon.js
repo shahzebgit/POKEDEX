@@ -2,8 +2,8 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 const Pokemon = () => {
-  const { pokemonId } = useParams();
-  return <div>{`This is Pokemon Page #${pokemonId}`}</div>;
+  const { pokeId } = useParams();
+  return <div>{`This is Pokemon Page #${pokeId}`}</div>;
 };
 
 export default Pokemon;
