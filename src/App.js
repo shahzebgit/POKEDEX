@@ -8,7 +8,7 @@ function App() {
     <Switch>
       <Route exact path="/" render={(props) => <Pokedex {...props}/>}/>
       <Route
-        path="/:pokemonId"
+        path="/:pokeId"
         render={(props) => <Pokemon {...props}/>}
       />
     </Switch>
