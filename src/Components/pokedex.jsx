@@ -35,7 +35,7 @@ const useStyles = makeStyles({
 const Pokedex = (props) => {
   const [pokemonData, setPokemonData] = useState(mockData);
   const classes = useStyles();
-  const {history} = props
+  const { history } = props;
   useEffect(() => {
     axios
       .get("https://pokeapi.co/api/v2/pokemon?limit=150")
@@ -47,20 +47,21 @@ const Pokedex = (props) => {
           newPokemonData[index + 1] = {
             id: index + 1,
             name: pokemon.name,
-            sprite: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`
+            sprite: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+              index + 1
+            }.png`,
           };
         });
-        setPokemonData(newPokemonData)
+        setPokemonData(newPokemonData);
       });
   }, []);
 
   const pokemonGrid = (pokeId) => {
-    const { id, name ,sprite } = pokemonData[pokeId];
-
+    const { id, name, sprite } = pokemonData[pokeId];
 
     return (
       <Grid item xs={12} sm={4} key={pokeId}>
-        <Card onClick={()=> history.push(`/${pokeId}`) }>
+        <Card onClick={() => history.push(`/${pokeId}`)}>
           <CardMedia className={classes.cardMedia} image={sprite} />
           <CardContent className={classes.label}>
             <Typography> {`${id}. ${name}`} </Typography>
