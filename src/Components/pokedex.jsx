@@ -8,18 +8,19 @@ import {
   CardContent,
   CircularProgress,
   Typography,
+  InputBase,
 } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import SearchIcon from "@material-ui/icons/Search";
+import { fade, makeStyles } from "@material-ui/core/styles";
 import mockData from "../Data/pokeData";
-import history from 'history'
 
 import axios from "axios";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   pokedexContainer: {
     paddingTop: "20px",
     paddingLeft: "50px",
-    paddingRight: "50px",
+    paddingRight: "0px",
   },
   cardMedia: {
     margin: "auto",
@@ -30,12 +31,36 @@ const useStyles = makeStyles({
     textTransform: "capitalize",
     textAlign: "center",
   },
-});
+  title: {
+    color: "white",
+  },
+  search: {
+    display: "flex",
+    padding: "2px 10px 1px 15px",
+    margin: "0px 10px",
+    backgroundColor: fade(theme.palette.common.white, 0.25),
+    "&:hover": {
+      backgroundColor: fade(theme.palette.common.white, 0.45),
+    },
+    borderRadius: "12px",
+  },
+  searchIcon: {
+    paddingTop: "3px",
+  },
+  inputBase: {
+    width: "150px",
+    "&:hover": {
+      width: "190px",
+    },
+  },
+}));
 
 const Pokedex = (props) => {
-  const [pokemonData, setPokemonData] = useState(mockData);
   const classes = useStyles();
   const { history } = props;
+  const [pokemonData, setPokemonData] = useState(mockData);
+  const [searchFilter, setSearchFilter] = useState("");
+
   useEffect(() => {
     axios
       .get("https://pokeapi.co/api/v2/pokemon?limit=150")
@@ -56,6 +81,10 @@ const Pokedex = (props) => {
       });
   }, []);
 
+  const handleSearchChange = (e) => {
+    setSearchFilter(e.target.value);
+  };
+
   const pokemonGrid = (pokeId) => {
     const { id, name, sprite } = pokemonData[pokeId];
 
@@ -71,14 +100,27 @@ const Pokedex = (props) => {
     );
   };
 
-  const pokemons = Object.keys(pokemonData).map((pokeId) =>
-    pokemonGrid(pokeId)
+  const pokemons = Object.keys(pokemonData).map(
+    (pokeId) =>
+      pokemonData[pokeId].name.includes(searchFilter) && pokemonGrid(pokeId)
   );
 
   return (
     <>
-      <AppBar position="static" color="secondary">
-        <Toolbar />
+      <AppBar position="static" color="primary">
+        <Toolbar>
+          <Typography className={classes.title} variant="h6">
+            Pokemon
+          </Typography>
+          <div className={classes.search}>
+            <SearchIcon className={classes.searchIcon} />
+            <InputBase
+              placeholder="Search…"
+              className={classes.inputBase}
+              onChange={handleSearchChange}
+            />
+          </div>
+        </Toolbar>
       </AppBar>
       {pokemonData ? (
         <Grid container spacing={4} className={classes.pokedexContainer}>
