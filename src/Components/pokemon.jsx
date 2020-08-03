@@ -39,6 +39,7 @@ const Pokemon = (props) => {
       <>
         {`${id}.`}
         <Typography variant="h1">
+          {name}
           <img src={front_default} alt="text" />
         </Typography>
         <img src={fullImageUrl} alt="MainImage" className={classes.cardMedia} />
