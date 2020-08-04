@@ -9,23 +9,44 @@ import {
   CircularProgress,
   Typography,
   InputBase,
+  CardActionArea,
 } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import mockData from "../Data/pokeData";
+import Color from "color";
 
 import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
+  "@global": {
+    "*::-webkit-scrollbar": {
+      width: "0.8em",
+    },
+    "*::-webkit-scrollbar-track": {
+      "-webkit-box-shadow": "inset 0 0 6px rgba(0,0,0,0.00)",
+    },
+    "*::-webkit-scrollbar-thumb": {
+      backgroundColor: "rgb(61,125,202)",
+      outline: "1px solid slategrey",
+    },
+  },
   pokedexContainer: {
     paddingTop: "20px",
-    paddingLeft: "50px",
-    paddingRight: "0px",
+    paddingLeft: "40px",
+    paddingRight: "40px",
   },
   cardMedia: {
     margin: "auto",
     width: "130px",
     height: "130px",
+  },
+  image: {
+    display: "flex",
+    marginLeft: "32%",
+    paddingTop: "3px",
+    paddingBottom: "8px",
+    minWidth: "450px",
   },
   label: {
     textTransform: "capitalize",
@@ -49,10 +70,22 @@ const useStyles = makeStyles((theme) => ({
   },
   inputBase: {
     width: "150px",
-    "&:hover": {
-      width: "190px",
-    },
+    // "&:hover": {
+    //   width: "190px",
+    // },
   },
+
+  card: ({ color }) => ({
+    minWidth: 256,
+    borderRadius: 16,
+
+    "&:hover": {
+      boxShadow: `0 6px 12px 0 ${Color(color)
+        .rotate(-12)
+        .darken(0.9)
+        .fade(0.5)}`,
+    },
+  }),
 }));
 
 const Pokedex = (props) => {
@@ -87,14 +120,19 @@ const Pokedex = (props) => {
 
   const pokemonGrid = (pokeId) => {
     const { id, name, sprite } = pokemonData[pokeId];
-
     return (
-      <Grid item xs={12} sm={4} key={pokeId}>
-        <Card onClick={() => history.push(`/${pokeId}`)}>
-          <CardMedia className={classes.cardMedia} image={sprite} />
-          <CardContent className={classes.label}>
-            <Typography> {`${id}. ${name}`} </Typography>
-          </CardContent>
+      <Grid item xs={12} sm={6} md={3} key={pokeId}>
+        <Card
+          onClick={() => history.push(`/${pokeId}`)}
+          className={classes.card}
+          variant="outlined"
+        >
+          <CardActionArea>
+            <CardMedia className={classes.cardMedia} image={sprite} />
+            <CardContent className={classes.label}>
+              <Typography> {`${id}. ${name}`} </Typography>
+            </CardContent>
+          </CardActionArea>
         </Card>
       </Grid>
     );
@@ -107,17 +145,20 @@ const Pokedex = (props) => {
 
   return (
     <>
-      <AppBar position="static" color="primary">
+      <AppBar position="static">
         <Toolbar>
-          <Typography className={classes.title} variant="h6">
-            Pokemon
-          </Typography>
           <div className={classes.search}>
             <SearchIcon className={classes.searchIcon} />
             <InputBase
               placeholder="Search…"
               className={classes.inputBase}
               onChange={handleSearchChange}
+            />
+          </div>
+          <div className={classes.image}>
+            <img
+              src="//upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/180px-International_Pok%C3%A9mon_logo.svg.png"
+              alt="pokemon"
             />
           </div>
         </Toolbar>
