@@ -5,7 +5,9 @@ dependencies:
   '@testing-library/react': 9.5.0_react-dom@16.13.1+react@16.13.1
   '@testing-library/user-event': 7.2.1
   axios: 0.19.2
+  color: 3.1.2
   history: 5.0.0
+  pnpm: 5.4.11
   react: 16.13.1
   react-dom: 16.13.1_react@16.13.1
   react-router-dom: 5.2.0_react@16.13.1
@@ -8405,6 +8407,13 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-7Wjy+9E3WwLOEL30D+m8TSTF7qJJUJLONBnwQp0518siuMxUQUbgZwssaFX+QKlZkjHZcw/IpZCt/H0srrntSg==
+  /pnpm/5.4.11:
+    dev: false
+    engines:
+      node: '>=10.13'
+    hasBin: true
+    resolution:
+      integrity: sha512-Rjb0T+cQIsjVsdVZvVg0x0Malc7QvBTJgAn+u9vD/g35smWIbSBDpuOdt3ufaWOPAPJ8ny7kk22+9RvTkkEy0w==
   /popper.js/1.16.1-lts:
     dev: false
     resolution:
@@ -11863,7 +11872,9 @@ specifiers:
   '@testing-library/react': ^9.5.0
   '@testing-library/user-event': ^7.2.1
   axios: ^0.19.2
+  color: ^3.1.2
   history: ^5.0.0
+  pnpm: ^5.4.7
   react: ^16.13.1
   react-dom: ^16.13.1
   react-router-dom: ^5.2.0
