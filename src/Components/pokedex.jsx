@@ -128,7 +128,11 @@ const Pokedex = (props) => {
           variant="outlined"
         >
           <CardActionArea>
-            <CardMedia className={classes.cardMedia} image={sprite} />
+            {sprite ? (
+              <CardMedia className={classes.cardMedia} image={sprite} />
+            ) : (
+              <CircularProgress />
+            )}
             <CardContent className={classes.label}>
               <Typography> {`${id}. ${name}`} </Typography>
             </CardContent>
