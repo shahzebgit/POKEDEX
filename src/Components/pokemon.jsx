@@ -14,45 +14,46 @@ import { useParams } from "react-router-dom";
 
 const useStyles = makeStyles({
   cardMedia: {
-    width: "200px",
-    height: "200px",
-    paddingTop:'40px'
+    width: "220px",
+    height: "220px",
+    paddingTop: "30px",
   },
   dot: {
-    height:'210px',
-    width: '210px',
-    backgroundColor: '#e6fefe',
-    borderRadius:' 50%',
-    display: 'inline-block',
+    height: "200px",
+    width: "210px",
+    backgroundColor: "#e6fefe",
+    borderRadius: " 50%",
+    display: "inline-block",
+    marginLeft:'20px',
+    marginTop:'10px'
   },
   root: {
     width: "500px",
     height: "500px",
-    margin:'auto',
+    margin: "auto",
     textAlign: "center",
-    backgroundColor:'#c6eced'
+    backgroundColor: "#c6eced",
+    minWidth:'256px'
   },
-  card: ({
+  card: {
     minWidth: 256,
     borderRadius: 16,
     textTransform: "capitalize",
-  }),
-  image: {
-    width: "50px",
-    height: "50px",
-    textAlign: "center",
-
   },
-  idNumber:{
-    display:'inline-block',
-    width:'40px',
-    height:'25px',
-    borderRadius:14,
-    backgroundColor:'#a0cece',
-    paddingTop:'5px',
-    fontFamily:'Crimson Text,serif',
-
-  }
+  image: {
+    width: "60px",
+    height: "60px",
+    textAlign: "center",
+  },
+  idNumber: {
+    display: "inline-block",
+    width: "40px",
+    height: "25px",
+    borderRadius: 14,
+    backgroundColor: "#a0cece",
+    paddingTop: "5px",
+    fontFamily: "Crimson Text,serif",
+  },
 });
 
 const Pokemon = (props) => {
@@ -87,16 +88,13 @@ const Pokemon = (props) => {
               {/* <img src={front_default} alt="text" className={classes.image} /> */}
             </Typography>
             <div className={classes.dot}>
-
-            <img
-              src={fullImageUrl}
-              alt="MainImage"
-              className={classes.cardMedia}
-            />
+              <img
+                src={fullImageUrl}
+                alt="MainImage"
+                className={classes.cardMedia}
+              />
             </div>
-            <div className={classes.idNumber} >
-              {`# ${id}`}
-            </div>
+            <div className={classes.idNumber}>{`# ${id}`}</div>
             <Typography variant="h6">
               Height: {height} m <br />
               Weight: {weight} kg

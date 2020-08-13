@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
   search: {
     display: "flex",
     padding: "2px 10px 1px 15px",
-    margin: "0px 10px",
+   
     backgroundColor: fade(theme.palette.common.white, 0.25),
     "&:hover": {
       backgroundColor: fade(theme.palette.common.white, 0.45),
