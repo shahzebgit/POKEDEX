@@ -43,10 +43,10 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     display: "flex",
-    marginLeft: "32%",
+    marginLeft: "34%",
     paddingTop: "3px",
     paddingBottom: "8px",
-    minWidth: "450px",
+    minWidth: "256px",
   },
   label: {
     textTransform: "capitalize",
