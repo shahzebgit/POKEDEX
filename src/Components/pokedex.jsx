@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     display: "flex",
-    marginLeft: "34%",
+    marginLeft: "31%",
     paddingTop: "3px",
     paddingBottom: "8px",
     minWidth: "256px",
@@ -86,6 +86,9 @@ const useStyles = makeStyles((theme) => ({
         .fade(0.5)}`,
     },
   }),
+  appBar:{
+    backgroundColor:'#2f67b2'
+  }
 }));
 
 const Pokedex = (props) => {
@@ -149,7 +152,7 @@ const Pokedex = (props) => {
 
   return (
     <>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.appBar}>
         <Toolbar>
           <div className={classes.search}>
             <SearchIcon className={classes.searchIcon} />
