@@ -1,0 +1,41 @@
+.cardMedia {
+  width: 220px;
+  height: 220px;
+  padding-top: 30px;
+}
+.dot {
+  height: 200px;
+  width: 210px;
+  background-color: #e6fefe;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.root {
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  text-align: center;
+  background-color: #c6eced!important;
+  min-width: 256px;
+  text-transform: capitalize;
+}
+.card {
+  min-width: 256;
+}
+.image {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+}
+
+.id-number {
+  display: inline-block;
+  width: 40px;
+  height: 25px;
+  border-radius: 14px;
+  background-color: #a0cece;
+  padding-top: 5px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
