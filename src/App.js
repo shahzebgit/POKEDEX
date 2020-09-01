@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
-import Pokemon from "./Components/pokemon";
-import Pokedex from "./Components/pokedex";
+import Pokemon from "./Components/Pokemon/pokemon.jsx";
+import Pokedex from "./Components/Pokedex/pokedex.jsx";
 
 function App() {
   return (
