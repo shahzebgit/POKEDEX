@@ -11,12 +11,14 @@ import {
   InputBase,
   CardActionArea,
 } from "@material-ui/core";
+
 import SearchIcon from "@material-ui/icons/Search";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import mockData from "../../Data/pokeData";
 import Color from "color";
-
 import axios from "axios";
+
+import "./pokedex.css";
 
 const useStyles = makeStyles((theme) => ({
   "@global": {
@@ -31,30 +33,6 @@ const useStyles = makeStyles((theme) => ({
       outline: "1px solid slategrey",
     },
   },
-  pokedexContainer: {
-    paddingTop: "20px",
-    paddingLeft: "40px",
-    paddingRight: "40px",
-  },
-  cardMedia: {
-    margin: "auto",
-    width: "130px",
-    height: "130px",
-  },
-  image: {
-    display: "flex",
-    marginLeft: "34%",
-    paddingTop: "5px",
-    paddingBottom: "8px",
-    minWidth: "256px",
-  },
-  label: {
-    textTransform: "capitalize",
-    textAlign: "center",
-  },
-  title: {
-    color: "white",
-  },
   search: {
     display: "flex",
     padding: "2px 10px 1px 15px",
@@ -65,16 +43,6 @@ const useStyles = makeStyles((theme) => ({
     },
     borderRadius: "12px",
   },
-  searchIcon: {
-    paddingTop: "3px",
-  },
-  inputBase: {
-    width: "150px",
-    // "&:hover": {
-    //   width: "190px",
-    // },
-  },
-
   card: ({ color }) => ({
     minWidth: 256,
     borderRadius: 16,
@@ -86,9 +54,6 @@ const useStyles = makeStyles((theme) => ({
         .fade(0.5)}`,
     },
   }),
-  appBar: {
-    backgroundColor: "#2f67b2",
-  },
 }));
 
 const Pokedex = (props) => {
@@ -132,11 +97,11 @@ const Pokedex = (props) => {
         >
           <CardActionArea>
             {sprite ? (
-              <CardMedia className={classes.cardMedia} image={sprite} />
+              <CardMedia className="cardMedia" image={sprite} />
             ) : (
               <CircularProgress />
             )}
-            <CardContent className={classes.label}>
+            <CardContent className="label">
               <Typography> {`${id}. ${name}`} </Typography>
             </CardContent>
           </CardActionArea>
@@ -151,26 +116,26 @@ const Pokedex = (props) => {
   );
   const pokemonLogo =
     "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/180px-International_Pok%C3%A9mon_logo.svg.png";
-  
-    return (
+
+  return (
     <>
-      <AppBar position="static" className={classes.appBar}>
+      <AppBar position="static" className="appBar">
         <Toolbar>
           <div className={classes.search}>
-            <SearchIcon className={classes.searchIcon} />
+            <SearchIcon className="searchIcon" />
             <InputBase
               placeholder="Search…"
-              className={classes.inputBase}
+              className="inputBase"
               onChange={handleSearchChange}
             />
           </div>
-          <div className={classes.image}>
+          <div className="image">
             <img src={pokemonLogo} alt="pokemon" />
           </div>
         </Toolbar>
       </AppBar>
       {pokemonData ? (
-        <Grid container spacing={4} className={classes.pokedexContainer}>
+        <Grid container spacing={4} className="pokedexContainer">
           {pokemons}
         </Grid>
       ) : (
