@@ -86,7 +86,7 @@ const Pokedex = (props) => {
     setSearchFilter(e.target.value);
   };
 
-  const pokemonGrid = (pokeId) => {
+  const pokedexGrid = (pokeId) => {
     const { id, name, sprite } = pokemonData[pokeId];
     return (
       <Grid item xs={12} sm={6} md={3} key={pokeId}>
@@ -97,7 +97,7 @@ const Pokedex = (props) => {
         >
           <CardActionArea>
             {sprite ? (
-              <CardMedia className="cardMedia" image={sprite} />
+              <CardMedia className="cardMedia1" image={sprite} />
             ) : (
               <CircularProgress />
             )}
@@ -112,10 +112,11 @@ const Pokedex = (props) => {
 
   const pokemons = Object.keys(pokemonData).map(
     (pokeId) =>
-      pokemonData[pokeId].name.includes(searchFilter) && pokemonGrid(pokeId)
+      pokemonData[pokeId].name.includes(searchFilter) && pokedexGrid(pokeId)
   );
+
   const pokemonLogo =
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/180px-International_Pok%C3%A9mon_logo.svg.png";
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/210px-International_Pok%C3%A9mon_logo.svg.png";
 
   return (
     <>
@@ -129,9 +130,9 @@ const Pokedex = (props) => {
               onChange={handleSearchChange}
             />
           </div>
-          <div className="image">
-            <img src={pokemonLogo} alt="pokemon" />
-          </div>
+        <div className="image" >
+          <img src={pokemonLogo} alt="pokemon" />
+        </div>
         </Toolbar>
       </AppBar>
       {pokemonData ? (

@@ -1,33 +1,35 @@
-.pokedexContainer {
-  padding-top: 20px;
-  padding-left: 40px;
-  padding-right: 40px;
-}
-.cardMedia {
+/* PokedexGrid */
+.cardMedia1 {
   margin: auto;
   width: 130px;
   height: 130px;
-}
-.image {
-  display: flex;
-  margin-left: 34%;
-  padding-top: 5px;
-  padding-bottom: 8px;
-  min-width: 256px;
 }
 .label {
   text-transform: capitalize;
   text-align: center;
 }
-/* .title {
-  color: white;
-} */
+
+/* Pokedex AppBar */
+.appBar {
+  background-color: #2f67b2;
+}
 .searchIcon {
   padding-top: 3px;
 }
 .inputBase {
   width: 150px;
 }
-.appBar {
-  background-color: #2f67b2;
+.pokedexContainer {
+  padding-top: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.image {
+  position: absolute;
+  left: 50%;
+  margin-left: -100px; 
+   padding-top: 10px;
+  padding-bottom: 8px;
+  
 }

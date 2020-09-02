@@ -10,7 +10,7 @@ import {
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-import './pokemon.css'
+import "./pokemon.css";
 
 const Pokemon = (props) => {
   const { pokeId } = useParams();
@@ -37,20 +37,27 @@ const Pokemon = (props) => {
     return (
       <>
         <Card className="root">
-          <CardContent className="card">
-            <Typography variant="h4">
+          <CardContent >
+            <Typography variant="h4" className="card">
               {name}
-              {/* <img src={front_default} alt="text" className={image} /> */}
             </Typography>
             <div className="dot">
-              <img src={fullImageUrl} alt="MainImage" className="cardMedia" />
+              <img src={fullImageUrl} alt="MainImage" className="cardMedia2" />
             </div>
             <div className="id-number">{`# ${id}`}</div>
-            <Typography variant="h6">
-              Height: {height} m <br />
-              Weight: {weight} kg
-            </Typography>
+          </CardContent>
 
+          <CardContent className='card2'>
+            <Typography  variant="h5" component="h2">
+              About<br/>
+            </Typography>
+            <Typography variant="h6">
+              Height: {height + 'm'} <br/>
+              Weight: {weight + 'kg'}
+            </Typography>
+          </CardContent>
+
+          <CardContent className="card3">
             <Typography variant="h5">Types:</Typography>
             {types.map((p) => {
               const { type } = p;

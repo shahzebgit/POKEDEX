@@ -1,8 +1,17 @@
-.cardMedia {
-  width: 220px;
-  height: 220px;
-  padding-top: 30px;
+/* Pokemon Card box  */
+.root {
+  width: 500px;
+  height: 800px;
+  margin: auto;
+  text-align: center;
+  background-color: #c6eced !important;
+  min-width: 256px;
+  text-transform: capitalize;
 }
+
+/* Pokemon Card Details */
+
+/* Pokemon background circle and image*/
 .dot {
   height: 200px;
   width: 210px;
@@ -12,24 +21,21 @@
   margin-left: 20px;
   margin-top: 10px;
 }
-.root {
-  width: 500px;
-  height: 500px;
-  margin: auto;
-  text-align: center;
-  background-color: #c6eced!important;
-  min-width: 256px;
-  text-transform: capitalize;
-}
+
 .card {
   min-width: 256;
-}
-.image {
-  width: 60px;
-  height: 60px;
+  display: block;
   text-align: center;
 }
 
+
+.cardMedia2 {
+  width: 220px;
+  height: 220px;
+  padding-top: 30px;
+}
+
+/* Pokemon id*/
 .id-number {
   display: inline-block;
   width: 40px;
@@ -37,5 +43,5 @@
   border-radius: 14px;
   background-color: #a0cece;
   padding-top: 5px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
